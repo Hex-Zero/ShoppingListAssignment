@@ -1,6 +1,11 @@
-const $inputField = $(".la-shopping-list-input")
+const $inputField = $(".max-shopping-list-input")
 
-const $buttonAddNewItem = $(".la-button")
+const $buttonAddNewItem = $(".max-button")
+
+setCookie("jobList", ["one","two"])
+
+console.log(getCookie("jobList"));
+
 
 $inputField.keydown(function(e){
     if(e.keyCode === 13){
@@ -11,25 +16,25 @@ $inputField.keydown(function(e){
 function createTaskListItem(){
 
     const $taskListItemContainer = $(document.createElement("div"))
-    .addClass("la-task-list-item-container")
+    .addClass("max-task-list-item-container")
 
     
     const $taskListItem = $(document.createElement("div"))
-    .addClass("la-shopping-list")
+    .addClass("max-shopping-list")
     .html($inputField.val())
     .click(function(){
         $checkBox.click();
     })
 
     const $checkBox = $(document.createElement("input"))
-    .addClass("la-check-box")
+    .addClass("max-check-box")
     .prop("type", "checkbox") 
     .on("click" , function(){
-        $taskListItem.toggleClass("la-cross-out-item")  
+        $taskListItem.toggleClass("max-cross-out-item")  
     })
 
     const $removeButton = $(document.createElement("button"))
-    .addClass("la-task-item-remove")
+    .addClass("max-task-item-remove")
     .html('Delete')
     .on("click", function(){
         $taskListItemContainer.remove();
@@ -39,15 +44,15 @@ function createTaskListItem(){
 }
 
 function addNewTask(){
-    $(".la-warning-message").remove()
+    $(".max-warning-message").remove()
 
     if(!$inputField.val()){
-        $(".la-input-container")
-        .append("<div class='la-warning-message'>Please Enter Task Name!!!!</div>")
+        $(".max-input-container")
+        .append("<div class='max-warning-message'>Please Enter Task Name!!!!</div>")
         return;
     }
 
-    $(".la-all-elements").append(createTaskListItem())
+    $(".max-all-elements").append(createTaskListItem())
 
     $inputField.val("")
 }
