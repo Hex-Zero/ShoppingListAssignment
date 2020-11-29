@@ -4,22 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />    
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header></header>
     <section>
-      <div class="max-all-elements">
-        <!-- <img src="Images/Money.jpg" /> -->
+      <form class="max-all-elements">
         <div class="max-input-container">
-          <input type="text" class="max-input max-task-list-input" />
-          <input type="text" class="max-input max-salary-input" />
+          <div class="max-input-fields">
+            <label class="max-input-label" for="max-job-title-input"
+              >Job Title</label
+            >
+            <input
+              required
+              type="text"
+              id="max-job-title-input"
+              placeholder="Enter Job Title"
+              class="max-input max-job-title-input"
+            />
+          </div>
+          <div class="max-input-fields">
+            <label class="max-input-label" for="max-salary-input">Salary</label>
+            <input
+              required
+              id="max-salary-input"
+              type="number"
+              placeholder="Salary"
+              class="max-input max-salary-input"
+            />
+          </div>
           <button class="max-button">Add task</button>
         </div>
         <div class="max-warning-message"></div>
-      </div>
+      </form>
     </section>
     <footer></footer>
   </body>

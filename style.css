@@ -6,6 +6,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
 }
@@ -36,6 +37,25 @@ section {
   align-items: center;
 }
 
+.max-input-fields {
+  position: relative;
+}
+
+.max-input-label {
+  position: absolute;
+  font-size: 12px;
+  left: 10px;
+  margin-top: 10px;
+  color: rgb(158, 158, 158);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.max-input-label.max-show-label {
+  margin-top: -15px;
+  opacity: 1;
+}
+
 .max-title {
   color: rgb(19, 8, 2);
   font-size: 70px;
@@ -46,12 +66,12 @@ section {
 }
 
 .max-salary-input {
-  margin: 0 10px;
 }
 
 .max-input {
   background-color: var(--background-colour);
   border: none;
+  width: 100%;
   padding: 10px;
 }
 
@@ -61,15 +81,16 @@ section {
 }
 
 .max-button {
-  background-color: orange;
-  padding: 12px 20px;
+  background-color: rgb(41, 0, 117);
+  padding: 0 20px;
   border: none;
+  color: #fff;
   justify-content: center;
   font-size: 15px;
 }
 
 .max-button:hover {
-  background-color: rgb(226, 147, 1);
+  background-color: rgb(61, 18, 139);
 }
 
 .max-warning-message {
@@ -78,9 +99,11 @@ section {
 
 .max-input-container {
   position: relative;
+  width: 500px;
   padding: 20px;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-column-gap: 5px;
 }
 
 .max-input-container > .max-warning-message {
