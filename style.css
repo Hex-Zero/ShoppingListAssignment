@@ -14,7 +14,7 @@
 header {
   height: 20px;
   background-color: var(--main-colour);
-  text-align: center;
+  text-align: end;
 }
 
 footer {
@@ -51,6 +51,19 @@ section {
   transition: all 0.2s ease-in-out;
 }
 
+.max-total-input {
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  border: none;
+  width: 40px;
+}
+
+.max-total-label {
+  background-color: transparent;
+  color: rgb(235, 235, 235);
+  border: none;
+}
+
 .max-input-label.max-show-label {
   margin-top: -15px;
   opacity: 1;
@@ -70,6 +83,14 @@ section {
 
 .max-job-list-container {
   width: 100%;
+}
+
+.max-job-list-container > :nth-child(odd) {
+  background-color: rgb(223, 240, 255);
+}
+
+.max-job-list-container > :nth-child(odd):hover {
+  background-color: rgb(208, 233, 255);
 }
 
 .max-input {
@@ -104,7 +125,7 @@ section {
 .max-input-container {
   position: relative;
   width: 500px;
-  padding: 20px;
+  padding: 20px 0;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   grid-column-gap: 5px;
@@ -116,21 +137,28 @@ section {
 }
 
 .max-check-box {
-  transform: scale(2);
 }
 
 .max-shopping-list {
   position: relative;
-  margin-top: 30px;
-  font-size: 30px;
 }
 
 .max-task-item-remove {
   padding: 7px;
-  background-color: red;
+  background-color: transparent;
   border-radius: 5px;
+  border: none;
   font-size: bold;
   margin-left: 20px;
+}
+
+.max-delete-svg {
+  width: 20px;
+  fill: darkred;
+}
+.max-delete-svg:hover {
+  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg)
+    brightness(104%) contrast(97%);
 }
 
 .max-task-list-item-container {
@@ -138,7 +166,12 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 30px;
+  padding: 5px 15px;
+  background-color: azure;
+}
+
+.max-task-list-item-container:hover {
+  background-color: rgb(224, 255, 255);
 }
 
 .max-cross-out-item {

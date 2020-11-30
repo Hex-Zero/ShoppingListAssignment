@@ -24,7 +24,6 @@ function calculateTotal() {
     }
   });
   saveTotal(parseInt(loadTotal()) + salary);
-  console.log(salary);
 }
 
 function createTaskListItem({ title, salary, complete, index }) {
@@ -40,7 +39,7 @@ function createTaskListItem({ title, salary, complete, index }) {
 
   const $jobSalary = $(document.createElement("div"))
     .addClass("max-job-salary")
-    .html(salary)
+    .html(salary + "£")
     .click(function () {
       $checkBox.click();
     });
@@ -50,6 +49,7 @@ function createTaskListItem({ title, salary, complete, index }) {
     .prop({ type: "checkbox", checked: complete })
     .on("click", function (e) {
       updateCompleteStatus(index, e.currentTarget.checked);
+      calculateTotal();
       updatePage();
     });
 
@@ -61,7 +61,9 @@ function createTaskListItem({ title, salary, complete, index }) {
 
   const $removeButton = $(document.createElement("button"))
     .addClass("max-task-item-remove")
-    .html("Delete")
+    .html(
+      "<img src='../assets/icons/dumpster-fire.svg' class='max-delete-svg'/>"
+    )
     .on("click", function () {
       if ($checkBox.is(":checked")) $checkBox.click();
       deleteJobFromArray(index);
