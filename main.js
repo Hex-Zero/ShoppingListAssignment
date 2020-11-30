@@ -1,12 +1,25 @@
 const $buttonAddNewItem = $(".max-button");
 
-const jobsArray = getCookie("jobList");
+saveJobs([]);
 
-$inputField.keydown(function (e) {
-  if (e.keyCode === 13) {
-    addNewTask();
-  }
-});
+const jobsArray = [];
+updatePage();
+
+function addNewTask() {
+  const $newJob = createTaskListItem();
+  jobsArray.push($newJob);
+  updatePage();
+  saveJobs(jobsArray);
+  console.log(loadJobs());
+  $inputField.val("");
+}
+
+function updatePage() {
+  jobsArray.forEach((element) => {
+    console.log(element);
+    if (element) $(element).appendTo($(".max-all-elements"));
+  });
+}
 
 $(":input").on("keyup ", function (e) {
   if (e.target.value) {
@@ -15,12 +28,6 @@ $(":input").on("keyup ", function (e) {
     $(e.target.labels[0]).removeClass("max-show-label");
   }
 });
-
-function addNewTask() {
-  $(".max-all-elements").append(createTaskListItem());
-
-  $inputField.val("");
-}
 
 $(".max-all-elements").submit(function () {
   addNewTask();

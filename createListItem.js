@@ -27,5 +27,7 @@ function createTaskListItem() {
       $taskListItemContainer.remove();
     });
 
-  return $taskListItemContainer.append($checkBox, $taskListItem, $removeButton);
+  return $taskListItemContainer
+    .append($checkBox, $taskListItem, $removeButton)
+    .outterHTML();
 }
