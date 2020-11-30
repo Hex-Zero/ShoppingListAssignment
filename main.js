@@ -1,25 +1,34 @@
+const $inputField = $(".max-job-title-input");
+const $maxJobListContainer = $(".max-job-list-container");
+
 const $buttonAddNewItem = $(".max-button");
 
-saveJobs([]);
-
-const jobsArray = [];
+const jobsArray = loadJobs().length > 0 ? loadJobs() : [];
+console.log(loadJobs());
 updatePage();
 
 function addNewTask() {
-  const $newJob = createTaskListItem();
-  jobsArray.push($newJob);
+  const newJob = createItemObjcet($inputField.val(), 0, true);
+  jobsArray.push(newJob);
   updatePage();
-  saveJobs(jobsArray);
-  console.log(loadJobs());
   $inputField.val("");
 }
 
+$buttonAddNewItem.click(function () {
+  addNewTask();
+});
+
 function updatePage() {
-  jobsArray.forEach((element) => {
-    console.log(element);
-    if (element) $(element).appendTo($(".max-all-elements"));
+  $maxJobListContainer.empty();
+  jobsArray.forEach((element, index) => {
+    $(createTaskListItem({ ...element, index })).appendTo($maxJobListContainer);
   });
+  saveJobs(jobsArray);
 }
+
+$("#mx-new-job-form").submit(function () {
+  return false;
+});
 
 $(":input").on("keyup ", function (e) {
   if (e.target.value) {
@@ -27,9 +36,4 @@ $(":input").on("keyup ", function (e) {
   } else {
     $(e.target.labels[0]).removeClass("max-show-label");
   }
-});
-
-$(".max-all-elements").submit(function () {
-  addNewTask();
-  return false;
 });

@@ -1,13 +1,14 @@
-const $inputField = $(".max-job-title-input");
+function createItemObjcet(title, salary, complete) {
+  return { title, salary, complete };
+}
 
-function createTaskListItem() {
+function createTaskListItem({ title, salary, complete, index }) {
   const $taskListItemContainer = $(document.createElement("div")).addClass(
     "max-task-list-item-container"
   );
-
   const $taskListItem = $(document.createElement("div"))
     .addClass("max-shopping-list")
-    .html($inputField.val())
+    .html(title + index)
     .click(function () {
       $checkBox.click();
     });
@@ -22,12 +23,15 @@ function createTaskListItem() {
   const $removeButton = $(document.createElement("button"))
     .addClass("max-task-item-remove")
     .html("Delete")
-
     .on("click", function () {
-      $taskListItemContainer.remove();
+      deleteJobFromArray(index);
+      updatePage();
     });
 
-  return $taskListItemContainer
-    .append($checkBox, $taskListItem, $removeButton)
-    .outterHTML();
+  return $taskListItemContainer.append($checkBox, $taskListItem, $removeButton);
+}
+
+function deleteJobFromArray(index) {
+  jobsArray.splice(index, 1);
+  saveJobs(jobsArray);
 }

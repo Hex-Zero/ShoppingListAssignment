@@ -68,6 +68,10 @@ section {
 .max-salary-input {
 }
 
+.max-job-list-container {
+  width: 100%;
+}
+
 .max-input {
   background-color: var(--background-colour);
   border: none;

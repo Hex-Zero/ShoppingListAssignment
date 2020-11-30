@@ -14,25 +14,22 @@
   <body>
     <header></header>
     <section>
-      <form class="max-all-elements">
+      <form id="mx-new-job-form" class="max-all-elements">
         <div class="max-input-container">
           <div class="max-input-fields">
             <label class="max-input-label" for="max-job-title-input"
               >Job Title</label
             >
             <input
-              required
               type="text"
               id="max-job-title-input"
               placeholder="Enter Job Title"
               class="max-input max-job-title-input"
-              oninvalid="this.setCustomValidity('Please Enter Job Title')"
             />
           </div>
           <div class="max-input-fields">
             <label class="max-input-label" for="max-salary-input">Salary</label>
             <input
-              required
               id="max-salary-input"
               type="number"
               placeholder="Salary"
@@ -42,6 +39,7 @@
           <button class="max-button">Add task</button>
         </div>
         <div class="max-warning-message"></div>
+        <div class="max-job-list-container"></div>
       </form>
     </section>
     <footer></footer>
