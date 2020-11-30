@@ -26,6 +26,7 @@
               id="max-job-title-input"
               placeholder="Enter Job Title"
               class="max-input max-job-title-input"
+              oninvalid="this.setCustomValidity('Please Enter Job Title')"
             />
           </div>
           <div class="max-input-fields">
@@ -35,6 +36,7 @@
               id="max-salary-input"
               type="number"
               placeholder="Salary"
+              oninvalid="this.setCustomValidity('Please Enter Salary')"
               class="max-input max-salary-input"
             />
           </div>
@@ -51,5 +53,6 @@
     crossorigin = "anonymous";
   </script>
   <script src="manageCookies.js"></script>
+  <script src="createListItem.js"></script>
   <script src="main.js"></script>
 </html>
