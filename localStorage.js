@@ -5,3 +5,11 @@ function saveJobs(jobs) {
 function loadJobs() {
   return JSON.parse(localStorage.getItem("jobsList"));
 }
+
+function saveTotal(total) {
+  localStorage.setItem("totalDebt", total);
+}
+
+function loadTotal() {
+  return localStorage.getItem("totalDebt");
+}
