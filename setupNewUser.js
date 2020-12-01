@@ -1,4 +1,5 @@
 function setupNewUser() {
+  saveJobs([]);
   $("#myModal").modal("show");
   $("#start-button").click(function () {
     saveNewUser(true);
@@ -9,7 +10,6 @@ function setupNewUser() {
 }
 
 function resetUser() {
-  saveJobs([]);
   saveNewUser("");
   saveTotal(0);
   location.reload();
