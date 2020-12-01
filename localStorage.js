@@ -13,3 +13,11 @@ function saveTotal(total) {
 function loadTotal() {
   return localStorage.getItem("totalDebt");
 }
+
+function saveNewUser(NewUser) {
+  localStorage.setItem("NewUser", NewUser);
+}
+
+function loadNewUser() {
+  return localStorage.getItem("NewUser");
+}

@@ -5,6 +5,8 @@ const $totalInput = $(".max-total-input");
 
 const $buttonAddNewItem = $(".max-button");
 
+if (!loadNewUser()) setupNewUser();
+
 const jobsArray = loadJobs().length > 0 ? loadJobs() : [];
 updatePage();
 
