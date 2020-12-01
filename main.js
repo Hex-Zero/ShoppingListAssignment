@@ -7,6 +7,8 @@ const $buttonAddNewItem = $(".max-button");
 
 if (!loadNewUser()) setupNewUser();
 
+if (!loadJobs) saveJobs([]);
+
 const jobsArray = loadJobs().length > 0 ? loadJobs() : [];
 updatePage();
 
