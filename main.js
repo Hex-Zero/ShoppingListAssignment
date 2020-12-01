@@ -44,3 +44,7 @@ $(":input").on("keyup ", function (e) {
     $(e.target.labels[0]).removeClass("max-show-label");
   }
 });
+
+$(".max-clear-user-data").click(function () {
+  resetUser();
+});

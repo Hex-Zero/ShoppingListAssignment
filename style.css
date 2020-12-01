@@ -12,6 +12,7 @@
 }
 
 header {
+  position: relative;
   height: 20px;
   background-color: var(--main-colour);
   text-align: end;
@@ -144,7 +145,8 @@ section {
   position: relative;
 }
 
-.max-task-item-remove {
+.max-task-item-remove,
+.max-clear-user-data {
   padding: 7px;
   background-color: transparent;
   border-radius: 5px;
@@ -153,13 +155,25 @@ section {
   margin-left: 20px;
 }
 
-.max-delete-svg {
+.max-delete-svg,
+.max-clear-user-icon {
   width: 20px;
   fill: darkred;
 }
-.max-delete-svg:hover {
+.max-delete-svg:hover,
+.max-clear-user-icon:hover {
   filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg)
     brightness(104%) contrast(97%);
+}
+
+.max-clear-user-data {
+  position: absolute;
+  left: -15px;
+  top: -10px;
+}
+
+.max-clear-user-icon {
+  width: 15px;
 }
 
 .max-task-list-item-container {

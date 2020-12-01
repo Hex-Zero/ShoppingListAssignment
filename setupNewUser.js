@@ -7,3 +7,10 @@ function setupNewUser() {
     $("#myModal").modal("hide");
   });
 }
+
+function resetUser() {
+  saveJobs([]);
+  saveNewUser("");
+  saveTotal(0);
+  location.reload();
+}
